@@ -39,7 +39,7 @@ if uploaded_file:
     try:
         with st.spinner('Processing your file... Please wait!'):
             sleep(2) 
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(uploaded_file,encoding='latin1')
         df=df.head(1000)
         
         review_col=[col for col in df.columns if 'review' in col.lower()]
